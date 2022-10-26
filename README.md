@@ -1,5 +1,5 @@
 #CHAT API
-- Frontend
+
   - Get all chats
   - Get one chat
   - Get all chats of a specific user
@@ -29,18 +29,37 @@
       }]
     }
 ```
-ROUTES
-  /api/v1
+# ROUTES
+  /api/v1/users
+  /api/v1/users/:id
+  /api/v1/users/me
+  
+  #### /api/v1/conversations
+  
+    - This route shows the conversations with a logged user
+    - This is a protected route
 
-  /users
-    - /me
-    - /me/posts
-    - /me/posts/:id
-    - /:id
+  #### /api/v1/conversations/:id_conversation
+    - This route shows a specific conversation
+    - This allows to update and delete conversation
+    - This is a protected route
 
-  /categories
-    - /:id
-    - /:id/posts
+  #### /api/v1/conversations/:id_conversation/messages
+    - This route shows all the messages from a conversation
+    - This allows to create new messages
+    - This is a protected route
 
-  /posts
-    - /:id
+  #### /api/v1/conversations/:id_conversation/messages/:id_message
+    - This route shows a specific message
+    - It can delete a message, but not update it
+    - This is a protected route
+
+  #### /api/v1/conversations/:id_conversation/participants
+    - This route shows the participants from a conversation
+    - It allows to add new participants to the conversation
+    - This is a protected route
+
+  #### /api/v1/conversations/:id_conversation/participants/:id_participant
+    - This route shows a specific participant from a conversation
+    - It allows to delete participants from the conversation
+    - This is a protected route

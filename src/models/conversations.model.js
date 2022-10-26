@@ -28,12 +28,14 @@ const Conversations = db.define('categories', {
     }
   },
   createdAt:{
-    type: DataTypes.NOW,
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW,
     allowNull: false,
     field: 'created_at'
   },
   updatedAt:{
-    type: DataTypes.NOW,
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW,
     allowNull: false,
     field: 'updated_at'
   }

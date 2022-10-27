@@ -4,7 +4,7 @@ const messagesServices = require('./messages.services')
 require('../middlewares/auth.middleware')(passport)
 
 //Root route
-router.get('/')
+router.route('/')
   .get(messagesServices.getAllMessages)
   .post(passport.authenticate('jwt', {session: false}, messagesServices.postMessage))
 

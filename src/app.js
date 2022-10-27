@@ -46,6 +46,7 @@ app.get('/', (req, res) => {
 //Using the routes
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/messages', messagesRouter)
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`)

@@ -10,6 +10,7 @@ router.route('/')
   
 
 //Dynamic routes by id
+//If this fails, look at the router.get('/:id/posts', getPostsByCategory) in the chefcito project
 router.route('/:id')
   .post(passport.authenticate('jwt', {session: false}, conversationsServices.postConversation))
   .patch(passport.authenticate('jwt', {session: false}, conversationsServices.patchConversation))

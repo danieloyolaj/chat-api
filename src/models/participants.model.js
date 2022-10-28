@@ -5,7 +5,7 @@ const Conversations = require('./conversations.model')
 
 //Model for the participants table
 const Participants = db.define('participants', {
-  idConversation:{
+  conversationId:{
     type: DataTypes.UUID,
     allowNull: false,
     field: 'id_conversation',

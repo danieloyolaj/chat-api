@@ -29,7 +29,7 @@ const getParticipantById = (req, res) => {
 }
 
 //Service for deleting a participant from a conversation
-const deleteParticipantFromConversation = (req, req) => {
+const deleteParticipantFromConversation = (res, req) => {
   const id = req.params.id
   participantsControllers.deleteParticipantFromConversation(id)
     .then(data => {

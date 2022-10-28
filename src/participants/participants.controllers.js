@@ -2,7 +2,6 @@ const participantsModel = require('../models/participants.model')
 const uuid = require('uuid')
 
 // const Participants = require('../models/participants.model')
-const uuid = require('uuid')
 
 //Controller for getting participants from a conversation
 //If id does not work, add a parameter with the relation of the model

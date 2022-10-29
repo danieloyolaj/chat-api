@@ -2,12 +2,11 @@ const db = require('../utils/database')
 const { DataTypes } = require('sequelize')
 const Users = require('./users.model')
 
-const Conversations = db.define('categories', {
-  idConversation:{
+const Conversations = db.define('conversations', {
+  id:{
     type: DataTypes.UUID,
     primaryKey: true,
-    allowNull: false,
-    field: 'id_conversation'
+    allowNull: false
   },
   title:{
     type: DataTypes.STRING(30),
@@ -18,30 +17,16 @@ const Conversations = db.define('categories', {
     allowNull: true,
     field: 'image_url'
   },
-  createBy:{
+  createdBy:{
     type: DataTypes.UUID,
     allowNull: false,
     field: 'created_by',
     references: {
-      key: 'id_user',
+      key: 'id',
       model: Users
     }
-  },
-  createdAt:{
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
-    allowNull: false,
-    field: 'created_at'
-  },
-  updatedAt:{
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
-    allowNull: false,
-    field: 'updated_at'
   }
   
-}, {
-  timestamps: false //Avoids sequelize to add columns createdAt and updatedAt
 })
 
 module.exports = Conversations

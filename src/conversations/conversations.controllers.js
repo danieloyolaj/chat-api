@@ -4,9 +4,9 @@ const Users = require('../models/users.model')
 const Messages = require('../models/messages.model')
 
 //Controller for getting all conversations from one specific user
-const getAllConversations = async (id) => {
+const getAllConversations = async () => {
   const data = await conversationsModel.findAll({ 
-    where: {id},
+    // where: {id},
     include:[
       {
         model: Users,

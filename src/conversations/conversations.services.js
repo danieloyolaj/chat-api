@@ -25,9 +25,9 @@ const getAllConversationsById = (req, res) => {
 
 //Service for creating a conversation
 const postConversation = (req, res) => {
-  const { title, imageUrl, createBy } = req.body
-  if(title && imageUrl && createBy){
-    conversationsControllers.createConversation({ title, imageUrl, createBy })
+  const { title, imageUrl, createdBy } = req.body
+  if(title && imageUrl && createdBy){
+    conversationsControllers.createConversation({ title, imageUrl, createdBy })
       .then(data => {
         res.status(201).json(data)
       })
@@ -38,7 +38,7 @@ const postConversation = (req, res) => {
     res.status(400).json({message: 'Missing data. Required fields:', fields:{
       title: 'string',
       imageUrl: 'string',
-      createBy: 'uuid'
+      createdBy: 'uuid'
     }})
   }
 }

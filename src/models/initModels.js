@@ -13,8 +13,11 @@ const initModels = () => {
   Messages.belongsTo(Conversations)
   Conversations.hasMany(Messages)
 
+  Conversations.belongsTo(Users)
+  Users.hasMany(Conversations)
+
   Participants.hasMany(Users)
-  Participants.hasMany(Conversations)
+  Users.belongsTo(Participants)
   
 }
 

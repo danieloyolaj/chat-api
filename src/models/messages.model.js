@@ -4,19 +4,18 @@ const Users = require('./users.model')
 const Conversations = require('./conversations.model')
 
 //Model for the userCategories table
-const Messages = db.define('user_categories', {
-  idMessage:{
+const Messages = db.define('messages', {
+  id:{
     type: DataTypes.UUID,
     primaryKey: true,
-    allowNull: false,
-    field: 'id_message'
+    allowNull: false
   },
   senderId: {
     type: DataTypes.UUID,
     allowNull: false,
     field: 'sender_id',
     references: {
-      key: 'id_user',
+      key: 'id',
       model: Users
     }
   },
@@ -25,7 +24,7 @@ const Messages = db.define('user_categories', {
     allowNull: false,
     field: 'conversation_id',
     references: {
-      key: 'id_conversation',
+      key: 'id',
       model: Conversations
     }
   },

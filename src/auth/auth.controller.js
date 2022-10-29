@@ -13,12 +13,10 @@ const loginUser = async (email, password) => {
       }else{
         return false
       }
-    } catch (err) {
+  } catch (err) {
         return false
     }
 }
-
-// loginUser('sahid.kick@academlo.com', 'root')
 
 module.exports = {
   loginUser

@@ -2,7 +2,7 @@ const Messages = require('../models/messages.model')
 const uuid = require('uuid')
 
 //Gets all messages 
-const getAllMessages = async() => {
+const getAllMessages = async(offset, limit) => {
   const data = await Messages.findAndCountAll({
     //Pagination
     offset: offset,

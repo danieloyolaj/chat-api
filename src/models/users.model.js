@@ -3,11 +3,10 @@ const { DataTypes } = require('sequelize')
 
 //Model has to be in Uppercase and in plural form
 const Users = db.define('users', {
-    idUser: {
-      primaryKey: true,
+    id: {
       type: DataTypes.UUID,
-      allowNull: false,
-      field: 'id_user'
+      primaryKey: true,
+      allowNull: false
     },
     firstName: {
       type: DataTypes.STRING,
@@ -24,8 +23,8 @@ const Users = db.define('users', {
       allowNull: false,
 		unique: true,
 			validate: {
-			isEmail: true
-		}
+			  isEmail: true
+		  }
     },
     password: {
       type: DataTypes.STRING,
@@ -34,12 +33,18 @@ const Users = db.define('users', {
     profileImage: {
       type: DataTypes.STRING,
 			allowNull: false,
+      defaultValue: 'My picture',
       field: 'profile_image'
     },
     phone: {
 			type: DataTypes.STRING(16),
 			allowNull: false,
 			unique: true
+    },
+    status:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'active'
     }
 })
 

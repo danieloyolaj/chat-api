@@ -5,12 +5,12 @@ const Conversations = require('./conversations.model')
 
 //Model for the participants table
 const Participants = db.define('participants', {
-  conversationId:{
+  id:{
     type: DataTypes.UUID,
+    primaryKey: true,
     allowNull: false,
-    field: 'id_conversation',
     references: {
-      key: 'id_conversation',
+      key: 'id',
       model: Conversations
     }
   },
@@ -19,7 +19,7 @@ const Participants = db.define('participants', {
     allowNull: false,
     field: 'id_user',
     references: {
-      key: 'id_user',
+      key: 'id',
       model: Users
     }
   }
